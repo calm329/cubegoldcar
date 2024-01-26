@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Montserrat Alternates';
+  src: url(/static/fonts/MontserratAlternates-ExtraBold.ttf);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -79,3 +84,8 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+.driveHEading{
+  font-family: 'Montserrat Alternates';
+}
+
+
