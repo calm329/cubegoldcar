@@ -11,15 +11,21 @@ export function SiteHeader() {
   return (
     <header className="bg-transparent p-[22px] absolute top-0 w-full">
       <div className="nav flex justify-between relative items-center">
-        <div>
+        <div className="flex items-center">
           <Image
             alt="logo"
             src={"/static/images/logo.png"}
             width={282}
             height={86}
           />
+          <div className="flex ml-10">
+            <p className="text-xl font-bold text-[#223B80] mr-7 navLinks">Home</p>
+            <p className="text-xl font-bold text-[#223B80] mr-7 navLinks">Cars</p>
+            <p className="text-xl font-bold text-[#223B80] mr-7 navLinks">About Us</p>
+            <p className="text-xl font-bold text-[#223B80] mr-7 navLinks">How It Works</p>
+          </div>
         </div>
-        <div
+        {/* <div
           className="searchInput flex justify-between max-w-[518px] w-full py-3 px-5 rounded-full border-2 border-[#223B80] absolute left-[50%] top-[50%]"
           style={{ transform: `translate(-50%,-50%)` }}
         >
@@ -106,7 +112,7 @@ export function SiteHeader() {
               stroke-linejoin="round"
             />
           </svg>
-        </div>
+        </div> */}
         <div className="flex items-center ">
           <div className="languageSelect flex items-center">
             <svg

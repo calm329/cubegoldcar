@@ -7,6 +7,35 @@
   src: url(/static/fonts/MontserratAlternates-ExtraBold.ttf);
 }
 
+@font-face {
+  font-family: PlusJakartaSans;
+  src: url(/static/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Bold.ttf);
+  /* font-weight: bold; */
+}
+
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url(/static/fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+.font-PlusJakartaSans {
+  font-family: PlusJakartaSans, sans-serif;
+  /* specify the correct font-family */
+}
+
+
+/* @font-face {
+  font-family: 'PlusJakartaSans';
+  src: url(/static/fonts/PlusJakartaSans-Regular);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'PlusJakartaSans';
+  src: url(/static/fonts/PlusJakartaSans-SemiBold);
+  font-weight: 500;
+} */
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -79,13 +108,30 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
-.driveHEading{
+
+.driveHEading,
+.offerHeading {
   font-family: 'Montserrat Alternates';
 }
 
+.liveIcon {
+  animation: liveIcon infinite 1s;
+}
+.navLinks{
+  font-family: Montserrat-Regular;
+}
+@keyframes liveIcon {
+  0% {
+    padding: 0px;
+  }
 
+  100% {
+    padding: 4px;
+  }
+}
