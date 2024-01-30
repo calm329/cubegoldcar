@@ -8,9 +8,11 @@ import { Icons } from '@/components/icons'
 import Rating from '@/components/constants/Rating'
 import { Button } from '@/components/ui/button'
 import CarouselComponent from '@/components/constants/Carousel'
+import { useRouter } from 'next/navigation'
 type Props = {}
 
 function page({ }: Props) {
+    const router = useRouter()
 
 
     return (
@@ -73,7 +75,9 @@ function page({ }: Props) {
                                         <p className='text-[28px] font-PlusJakartaSans font-bold'>$99.00/ <span className='text-[14px] text-[#90A3BF]'>day</span></p>
                                         <p className='text-[14px] text-[#90A3BF]'><s>$100.00</s></p>
                                     </div>
-                                    <Button className='bg-[#223B80] w-[140px] h-[56px] font-PlusJakartaSans text-base text-white'>
+                                    <Button className='bg-[#223B80] w-[140px] h-[56px] font-PlusJakartaSans text-base text-white' onClick={() => {
+                                        router.push('/billing')
+                                    }}>
                                         Rent Now
                                     </Button>
                                 </div>
