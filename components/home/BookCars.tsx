@@ -11,17 +11,17 @@ function BookCars({ }: Props) {
     return (
         <div className='w-[calc(100%-130px)] my-0 mx-auto flex justify-between items-center flex-col'>
             <div className='scheduleData flex justify-between items-center w-full px-[18px] mb-5'>
-                <ScheduleForm />
+                <ScheduleForm classnames="w-[calc(50%-50px)]" />
                 <Button className='aspect-square bg-[#223B80] p-1'>
                     <Icons.changeIcon />
                 </Button>
-                <ScheduleForm />
+                <ScheduleForm classnames="w-[calc(50%-50px)]" />
             </div>
             <div className='w-full font-PlusJakartaSans text-base'>
                 <p className='ml-6 mb-5 font-semibold'>Popular Car</p>
                 <div className='flex w-full justify-between items-center flex-wrap'>
                     {[1, 2, 3, 4].map((a, i) => (
-                        <CarCard />
+                        <CarCard className="lg:max-w-[calc((100%/3)-32px)] xl:max-w-[calc((100%/4)-32px)]" />
                     ))}
                 </div>
                 <div className='flex justify-center items-center mt-11'>
@@ -35,9 +35,10 @@ function BookCars({ }: Props) {
             </div>
             <div className='flex w-full justify-evenly items-center flex-wrap mt-12'>
                 {[1, 2, 3].map((a, i) => (
-                    <CarCard />
+                    <CarCard className="lg:max-w-[calc((100%/3)-32px)] xl:max-w-[calc((100%/4)-32px)]" />
                 ))}
             </div>
+   
         </div>
     )
 }

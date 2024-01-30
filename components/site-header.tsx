@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -6,10 +7,23 @@ import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { usePathname } from "next/navigation"
+import { useEffect, useState } from "react"
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  const [navbarSticy, setNavbarSticky] = useState(false)
+  useEffect(() => {
+    console.log(`Route changed to: ${pathname}`);
+    if (pathname != '/') {
+      setNavbarSticky(true)
+    }else{
+      setNavbarSticky(false)
+    }
+    // setChanges((prev) => prev + 1);
+  }, [pathname]);
   return (
-    <header className="bg-transparent p-[22px] absolute top-0 w-full">
+    <header className={`${navbarSticy ? "bg-white sticky shadow-md " : 'bg-transparent absolute'} p-[22px] py-0  top-0 w-full z-20 relative`}>
       <div className="nav flex justify-between relative items-center">
         <div className="flex items-center">
           <Image
@@ -19,10 +33,10 @@ export function SiteHeader() {
             height={86}
           />
           <div className="flex ml-10">
-            <p className="text-xl font-bold text-[#223B80] mr-7 navLinks">Home</p>
-            <p className="text-xl font-bold text-[#223B80] mr-7 navLinks">Cars</p>
-            <p className="text-xl font-bold text-[#223B80] mr-7 navLinks">About Us</p>
-            <p className="text-xl font-bold text-[#223B80] mr-7 navLinks">How It Works</p>
+            <Link href={'/'} className="text-xl font-bold text-[#223B80] mr-7 navLinks">Home</Link>
+            <Link href={'/Cars'} className="text-xl font-bold text-[#223B80] mr-7 navLinks">Cars</Link>
+            <Link href={'/about-us'} className="text-xl font-bold text-[#223B80] mr-7 navLinks">About Us</Link>
+            <Link href={'/how-it-works'} className="text-xl font-bold text-[#223B80] mr-7 navLinks">How It Works</Link>
           </div>
         </div>
         {/* <div

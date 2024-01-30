@@ -13,17 +13,19 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
 } from "@/components/ui/popover"
 
-type Props = {}
+type Props = {
+    classnames?: string;
+}
 
 const ScheduleForm = (props: Props) => {
     const [date, setDate] = React.useState<Date | undefined>(new Date())
     return (
-        <div className="bg-white w-[calc(50%-50px)] px-12 py-6 mt-10 rounded-xl">
+        <div className={`bg-white  px-12 py-6 mt-10 rounded-xl ${props.classnames}`}>
             <div className='flex mr-2 items-center'>
                 <div className='w-4 mr-2'>
                     <div className='liveIcon flex items-center justify-center bg-[#fdadad] rounded-full'>
@@ -53,7 +55,7 @@ const ScheduleForm = (props: Props) => {
                             <Button
                                 variant={"outline"}
                                 className={cn(
-                                    " w-4/2 justify-start text-left font-normal border-none",
+                                    " w-4/2 justify-start text-left font-normal border-none line-clamp-1 whitespace-nowrap",
                                     !date && "text-muted-foreground"
                                 )}
                             >
