@@ -20,19 +20,20 @@ import {
 
 type Props = {
     classnames?: string;
+    title?: string;
 }
 
 const ScheduleForm = (props: Props) => {
     const [date, setDate] = React.useState<Date | undefined>(new Date())
     return (
-        <div className={`bg-white  px-12 py-6 mt-10 rounded-xl ${props.classnames}`}>
+        <div className={`bg-white m-0 lg:mt-10 rounded-xl ${props.classnames}`}>
             <div className='flex mr-2 items-center'>
                 <div className='w-4 mr-2'>
                     <div className='liveIcon flex items-center justify-center bg-[#fdadad] rounded-full'>
                         <div className='bg-[#F90000] h-2 w-2 aspect-square rounded-full'></div>
                     </div>
                 </div>
-                <p className='font-PlusJakartaSans font-semibold text-base'>Pick - Up</p>
+                <p className='font-PlusJakartaSans font-semibold text-base'>{props.title}</p>
             </div>
             <div className='formInputs flex justify-between'>
                 <label className=''>
@@ -60,7 +61,7 @@ const ScheduleForm = (props: Props) => {
                                 )}
                             >
                                 <CalendarIcon className="mr-2 h-4 w-4" />
-                                {date ? format(date, "PPP") : <span>Pick a date</span>}
+                                {date ? format(date, "d MMM yyyy") : <span>Pick a date</span>}
                             </Button>
                         </PopoverTrigger>
                         <PopoverContent className="w-auto p-0">

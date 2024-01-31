@@ -5,30 +5,25 @@ type Props = {}
 
 function Promo({ }: Props) {
     return (
-        <div className='Promo w-[calc(100%-130px)] my-0 mx-auto flex justify-between items-center flex-col'>
+        <div className='Promo w-full p-6 lg:p-0 lg:w-[calc(100%-130px)] my-0 mx-auto flex justify-between items-center flex-col'>
             <div className='offerHeading mt-[52px] text-center'>
-                <h2 className='offerHeading text-5xl font-semibold text-[#223B80]'>PROMO</h2>
+                <h2 className='offerHeading text-3xl lg:text-5xl font-semibold text-[#223B80]'>Gold Services</h2>
             </div>
-            <div className='flex justify-around w-full mt-[77px] mb-7'>
+            <div className='flex flex-col lg:flex-row justify-around w-full mt-[77px] mb-7'>
                 <PromoCard
+                    classnames="mb-14"
                     image={'/static/images/friends.png'}
                     text={
-                        <p className='font-semibold text-[26.54px] text-[#223B80] text-center'>$50 for you
-                            <br />
-                            -
-                            <br />
-                            $25 for him
+                        <p className='font-semibold text-base lg:text-2xl text-[#223B80] text-center'>Support during <br /> car Pick-up at <br /> all office in <br /> Cuba
                         </p>
                     }
                 />
                 <PromoCard
+                    classnames=""
                     image={'/static/images/bitcoin.png'}
                     text={
-                        <p className='font-semibold text-[26.54px] text-[#223B80] text-center'>You save 10%
-                            <br />
-                            -
-                            <br />
-                            Quick Confirmation
+                        <p className='font-semibold text-base lg:text-2xl text-[#223B80] text-center'>First fuel tank included & guranteed
+
                         </p>
                     }
                 />

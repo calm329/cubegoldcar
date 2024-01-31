@@ -9,7 +9,64 @@ import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
+import { Drawer, DrawerContent, DrawerTrigger } from "./ui/drawer"
+type Props = {
+  classNames?: string;
+}
+const NavTools = ({ classNames }: Props) => {
+  return (
 
+    <>
+      <div className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames}`}>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16.44 3.09985C14.63 3.09985 13.01 3.97985 12 5.32985C10.99 3.97985 9.36998 3.09985 7.55998 3.09985C4.48998 3.09985 1.99998 5.59985 1.99998 8.68985C1.99998 9.87985 2.18998 10.9799 2.51998 11.9999C4.09998 16.9999 8.96998 19.9899 11.38 20.8099C11.72 20.9299 12.28 20.9299 12.62 20.8099C15.03 19.9899 19.9 16.9999 21.48 11.9999C21.81 10.9799 22 9.87985 22 8.68985C22 5.59985 19.51 3.09985 16.44 3.09985Z"
+            fill="#223B80"
+          />
+        </svg>
+      </div>
+      <div className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames}`}>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.34 14.4899L18.34 12.8299C18.13 12.4599 17.94 11.7599 17.94 11.3499L17.94 8.81988C17.94 6.46988 16.56 4.43988 14.57 3.48988C14.05 2.56988 13.09 1.99988 11.99 1.99988C10.9 1.99988 9.91999 2.58988 9.39999 3.51988C7.44999 4.48988 6.09999 6.49988 6.09999 8.81988L6.09999 11.3499C6.09999 11.7599 5.90999 12.4599 5.69999 12.8199L4.68999 14.4899C4.28999 15.1599 4.19999 15.8999 4.44999 16.5799C4.68999 17.2499 5.25999 17.7699 5.99999 18.0199C7.93999 18.6799 9.97999 18.9999 12.02 18.9999C14.06 18.9999 16.1 18.6799 18.04 18.0299C18.74 17.7999 19.28 17.2699 19.54 16.5799C19.8 15.8899 19.73 15.1299 19.34 14.4899Z"
+            fill="#223B80"
+          />
+          <path
+            d="M14.83 20.0099C14.41 21.1699 13.3 21.9999 12 21.9999C11.21 21.9999 10.43 21.6799 9.87998 21.1099C9.55998 20.8099 9.31998 20.4099 9.17998 19.9999C9.30998 20.0199 9.43998 20.0299 9.57998 20.0499C9.80998 20.0799 10.05 20.1099 10.29 20.1299C10.86 20.1799 11.44 20.2099 12.02 20.2099C12.59 20.2099 13.16 20.1799 13.72 20.1299C13.93 20.1099 14.14 20.0999 14.34 20.0699C14.5 20.0499 14.66 20.0299 14.83 20.0099Z"
+            fill="#223B80"
+          />
+        </svg>
+      </div>
+      <div className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames}`}>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M20.1 9.21994C18.29 9.21994 17.55 7.93994 18.45 6.36994C18.97 5.45994 18.66 4.29994 17.75 3.77994L16.02 2.78994C15.23 2.31994 14.21 2.59994 13.74 3.38994L13.63 3.57994C12.73 5.14994 11.25 5.14994 10.34 3.57994L10.23 3.38994C9.78 2.59994 8.76 2.31994 7.97 2.78994L6.24 3.77994C5.33 4.29994 5.02 5.46994 5.54 6.37994C6.45 7.93994 5.71 9.21994 3.9 9.21994C2.86 9.21994 2 10.0699 2 11.1199L2 12.8799C2 13.9199 2.85 14.7799 3.9 14.7799C5.71 14.7799 6.45 16.0599 5.54 17.6299C5.02 18.5399 5.33 19.6999 6.24 20.2199L7.97 21.2099C8.76 21.6799 9.78 21.3999 10.25 20.6099L10.36 20.4199C11.26 18.8499 12.74 18.8499 13.65 20.4199L13.76 20.6099C14.23 21.3999 15.25 21.6799 16.04 21.2099L17.77 20.2199C18.68 19.6999 18.99 18.5299 18.47 17.6299C17.56 16.0599 18.3 14.7799 20.11 14.7799C21.15 14.7799 22.01 13.9299 22.01 12.8799L22.01 11.1199C22 10.0799 21.15 9.21994 20.1 9.21994ZM12 15.2499C10.21 15.2499 8.75 13.7899 8.75 11.9999C8.75 10.2099 10.21 8.74994 12 8.74994C13.79 8.74994 15.25 10.2099 15.25 11.9999C15.25 13.7899 13.79 15.2499 12 15.2499Z"
+            fill="#223B80"
+          />
+        </svg>
+      </div>
+    </>
+  )
+
+}
 export function SiteHeader() {
   const pathname = usePathname();
   const [navbarSticy, setNavbarSticky] = useState(false)
@@ -17,13 +74,13 @@ export function SiteHeader() {
     console.log(`Route changed to: ${pathname}`);
     if (pathname != '/') {
       setNavbarSticky(true)
-    }else{
+    } else {
       setNavbarSticky(false)
     }
     // setChanges((prev) => prev + 1);
   }, [pathname]);
   return (
-    <header className={`${navbarSticy ? "bg-white sticky shadow-md relative" : 'bg-transparent absolute'} p-[22px] py-0 h-[87px]  top-0 w-full z-20 `}>
+    <header className={` bg-white sticky top-0 shadow-md relative ${navbarSticy ? "bg-white sticky top-0 shadow-md relative" : 'lg:shadow-none lg:bg-transparent lg:absolute'}  p-[22px] py-0 h-[87px]  top-0 w-full z-20 `}>
       <div className="nav flex justify-between relative items-center">
         <div className="flex items-center">
           <Image
@@ -32,7 +89,7 @@ export function SiteHeader() {
             width={282}
             height={86}
           />
-          <div className="flex ml-10">
+          <div className=" ml-10 hidden lg:flex">
             <Link href={'/'} className="text-xl font-bold text-[#223B80] mr-7 navLinks">Home</Link>
             <Link href={'/Cars'} className="text-xl font-bold text-[#223B80] mr-7 navLinks">Cars</Link>
             <Link href={'/about-us'} className="text-xl font-bold text-[#223B80] mr-7 navLinks">About Us</Link>
@@ -174,52 +231,36 @@ export function SiteHeader() {
               />
             </svg>
           </div>
-          <div className="rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M16.44 3.09985C14.63 3.09985 13.01 3.97985 12 5.32985C10.99 3.97985 9.36998 3.09985 7.55998 3.09985C4.48998 3.09985 1.99998 5.59985 1.99998 8.68985C1.99998 9.87985 2.18998 10.9799 2.51998 11.9999C4.09998 16.9999 8.96998 19.9899 11.38 20.8099C11.72 20.9299 12.28 20.9299 12.62 20.8099C15.03 19.9899 19.9 16.9999 21.48 11.9999C21.81 10.9799 22 9.87985 22 8.68985C22 5.59985 19.51 3.09985 16.44 3.09985Z"
-                fill="#223B80"
-              />
-            </svg>
+          <div className="ml-3">
+            <Drawer direction="left">
+              <DrawerTrigger asChild>
+                <button>
+                  <Icons.burgerMenu />
+                </button>
+              </DrawerTrigger>
+              <DrawerContent className="flex flex-col justify-between pb-4">
+                <div>
+                  <Image
+                    alt="logo"
+                    src={"/static/images/logo.png"}
+                    width={282}
+                    height={86}
+                  />
+                  <div className=" flex flex-col px-3 mt-4">
+                    <Link href={'/'} className="text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks">Home</Link>
+                    <Link href={'/Cars'} className="text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks">Cars</Link>
+                    <Link href={'/about-us'} className="text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks">About Us</Link>
+                    <Link href={'/how-it-works'} className="text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks">How It Works</Link>
+                  </div>
+                </div>
+                <div className="flex justify-evenly mt-4">
+                  <NavTools classNames={'flex ml-0'} />
+
+                </div>
+              </DrawerContent>
+            </Drawer>
           </div>
-          <div className="rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19.34 14.4899L18.34 12.8299C18.13 12.4599 17.94 11.7599 17.94 11.3499L17.94 8.81988C17.94 6.46988 16.56 4.43988 14.57 3.48988C14.05 2.56988 13.09 1.99988 11.99 1.99988C10.9 1.99988 9.91999 2.58988 9.39999 3.51988C7.44999 4.48988 6.09999 6.49988 6.09999 8.81988L6.09999 11.3499C6.09999 11.7599 5.90999 12.4599 5.69999 12.8199L4.68999 14.4899C4.28999 15.1599 4.19999 15.8999 4.44999 16.5799C4.68999 17.2499 5.25999 17.7699 5.99999 18.0199C7.93999 18.6799 9.97999 18.9999 12.02 18.9999C14.06 18.9999 16.1 18.6799 18.04 18.0299C18.74 17.7999 19.28 17.2699 19.54 16.5799C19.8 15.8899 19.73 15.1299 19.34 14.4899Z"
-                fill="#223B80"
-              />
-              <path
-                d="M14.83 20.0099C14.41 21.1699 13.3 21.9999 12 21.9999C11.21 21.9999 10.43 21.6799 9.87998 21.1099C9.55998 20.8099 9.31998 20.4099 9.17998 19.9999C9.30998 20.0199 9.43998 20.0299 9.57998 20.0499C9.80998 20.0799 10.05 20.1099 10.29 20.1299C10.86 20.1799 11.44 20.2099 12.02 20.2099C12.59 20.2099 13.16 20.1799 13.72 20.1299C13.93 20.1099 14.14 20.0999 14.34 20.0699C14.5 20.0499 14.66 20.0299 14.83 20.0099Z"
-                fill="#223B80"
-              />
-            </svg>
-          </div>
-          <div className="rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20.1 9.21994C18.29 9.21994 17.55 7.93994 18.45 6.36994C18.97 5.45994 18.66 4.29994 17.75 3.77994L16.02 2.78994C15.23 2.31994 14.21 2.59994 13.74 3.38994L13.63 3.57994C12.73 5.14994 11.25 5.14994 10.34 3.57994L10.23 3.38994C9.78 2.59994 8.76 2.31994 7.97 2.78994L6.24 3.77994C5.33 4.29994 5.02 5.46994 5.54 6.37994C6.45 7.93994 5.71 9.21994 3.9 9.21994C2.86 9.21994 2 10.0699 2 11.1199L2 12.8799C2 13.9199 2.85 14.7799 3.9 14.7799C5.71 14.7799 6.45 16.0599 5.54 17.6299C5.02 18.5399 5.33 19.6999 6.24 20.2199L7.97 21.2099C8.76 21.6799 9.78 21.3999 10.25 20.6099L10.36 20.4199C11.26 18.8499 12.74 18.8499 13.65 20.4199L13.76 20.6099C14.23 21.3999 15.25 21.6799 16.04 21.2099L17.77 20.2199C18.68 19.6999 18.99 18.5299 18.47 17.6299C17.56 16.0599 18.3 14.7799 20.11 14.7799C21.15 14.7799 22.01 13.9299 22.01 12.8799L22.01 11.1199C22 10.0799 21.15 9.21994 20.1 9.21994ZM12 15.2499C10.21 15.2499 8.75 13.7899 8.75 11.9999C8.75 10.2099 10.21 8.74994 12 8.74994C13.79 8.74994 15.25 10.2099 15.25 11.9999C15.25 13.7899 13.79 15.2499 12 15.2499Z"
-                fill="#223B80"
-              />
-            </svg>
-          </div>
+          <NavTools classNames={'hidden lg:flex'} />
         </div>
       </div>
     </header>

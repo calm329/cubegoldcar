@@ -5,7 +5,7 @@ type Props = {}
 function Banner({}: Props) {
   return (
     <section
-    className="firstSection w-full h-screen flex items-center mb-11"
+    className="firstSection w-full h-screen hidden lg:flex items-center mb-11"
     style={{
       backgroundImage: `url(/static/images/background.png)`,
       backgroundPosition: "center",
