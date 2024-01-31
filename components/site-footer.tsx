@@ -56,7 +56,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="w-full  lg:w-[calc(100%-120px)] border-black border-t-[1px] my-0 mx-auto flex justify-between items-center pt-6 flex-wrap lg:flex-row flex-col-reverse ">
-        <div className="w-full  lg:mb-0">
+        <div className="w-full lg:w-auto  lg:mb-0">
           <p className="text-white text-xs lg:text-base">©2022 CUBAGOLDCAR. All rights reserved</p>
         </div>
         <div className="flex justify-between lg:block w-full lg:w-auto mb-8 lg:mb-0 ">
