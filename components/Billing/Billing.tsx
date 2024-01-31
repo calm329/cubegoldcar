@@ -1,13 +1,18 @@
+"use client"
 import React from 'react'
 import FormCard from '@/components/form/FormCard'
 import InputForm from '@/components/form/InputForm'
 import Image from 'next/image'
 import { Checkbox } from '../ui/checkbox'
+import { Button } from '../ui/button'
+import { Icons } from '../icons'
+import { useRouter } from 'next/navigation'
 type Props = {}
 
 function Billing({ }: Props) {
+    const router = useRouter()
     return (
-        <div className='form max-w-[100%-492px-34px] w-full'>
+        <div className='form max-w-[calc(100%-492px-34px)] w-full'>
             <FormCard title={'Billing Info'} desc={'Please enter your billing info'} rightDec={'Step 1 of 4'}>
                 <div className='flex items-center justify-between flex-wrap w-full'>
                     <InputForm label="Name" inputClasses='bg-[#F6F7F9] text-[#90A3BF] font-normal ' placeholder={'Your name'} />
@@ -67,14 +72,38 @@ function Billing({ }: Props) {
                     </div>
                 </div>
                 <div className='pb-6'>
-                <div className='bankTransfer bg-[#F6F7F9] py-2  px-6 rounded-[10px] mt-4 flex justify-between items-center'>
-                    <div className='flex items-center '>
-                    <Checkbox id="terms" className='rounded-full mr-5' />
-                    <p className='text-[#223B80] text-base'>Bank Transfer</p>
+                    <div className='bankTransfer bg-[#F6F7F9] py-2  px-6 rounded-[10px] mt-4 flex justify-between items-center'>
+                        <div className='flex items-center '>
+                            <Checkbox id="terms" className='rounded-full mr-5 h-6 w-6' />
+                            <p className='text-[#223B80] text-base'>Bank Transfer</p>
+                        </div>
+                        <Image alt='banktransferIcon' src='/static/images/bankTransferIcon.png' width={58} height={51} />
                     </div>
-                    <Image alt='banktransferIcon' src='/static/images/bankTransferIcon.png' width={58} height={51}/>
                 </div>
+            </FormCard>
+            <FormCard title={'Optional Services'} desc={'We are getting to the end. Just few clicks and your rental is ready!'} rightDec={'Step 4 of 4'}>
+                {/* <div className='pb-6'> */}
+                <div className='bankTransfer bg-[#F6F7F9] py-4  px-6 rounded-[10px] mt-4 flex justify-between items-center'>
+                    <div className='flex items-center '>
+                        <Checkbox id="terms" className='mr-5 h-6 w-6' />
+                        <p className='text-[#223B80] text-base'>Additional driver</p>
+                    </div>
                 </div>
+                <div className='bankTransfer bg-[#F6F7F9] py-4  px-6 rounded-[10px] mt-4 flex justify-between items-center'>
+                    <div className='flex items-center '>
+                        <Checkbox id="terms" className='mr-5 h-6 w-6' />
+                        <p className='text-[#223B80] text-base'>Vip assistance</p>
+                    </div>
+                </div>
+                <Button className='bg-[#223B80] h-14 w-[140px] my-8 font-PlusJakartaSans text-base text-white' onClick={() => router.push('/confirmation')}>
+                    Rent Now
+                </Button>
+                <div className='pb-6'>
+                    <Icons.safeIcon />
+                    <p className='font-semibold text-base text-[#223B80] mb-2 mt-4'>All your data are safe</p>
+                    <p className='text-[#90A3BF] text-sm'>We are using the most advanced security to provide you the best experience ever.</p>
+                </div>
+                {/* </div> */}
             </FormCard>
         </div>
     )

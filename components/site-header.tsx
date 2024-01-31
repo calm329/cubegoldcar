@@ -23,7 +23,7 @@ export function SiteHeader() {
     // setChanges((prev) => prev + 1);
   }, [pathname]);
   return (
-    <header className={`${navbarSticy ? "bg-white sticky shadow-md " : 'bg-transparent absolute'} p-[22px] py-0  top-0 w-full z-20 relative`}>
+    <header className={`${navbarSticy ? "bg-white sticky shadow-md relative" : 'bg-transparent absolute'} p-[22px] py-0 h-[87px]  top-0 w-full z-20 `}>
       <div className="nav flex justify-between relative items-center">
         <div className="flex items-center">
           <Image
