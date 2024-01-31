@@ -8,9 +8,9 @@ type Props = {}
 
 export default function page({ }: Props) {
     return (
-        <div className='billing pt-[35px] px-[32px] flex justify-between'>
+        <div className='billing p-6 lg:pt-[35px] lg:px-[32px] flex justify-between text-black flex-wrap flex-row flex-col-reverse'>
             <Billing />
-            <div className='w-[492px]'>
+            <div className='w-full lg:w-[492px]'>
                 <CardDetail />
             </div>
         </div>

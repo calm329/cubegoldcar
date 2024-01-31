@@ -98,11 +98,17 @@ export const Icons = {
     </svg>
   ),
   burgerMenu: (props: LucideProps) => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path d="M3 7H21" stroke="#223B80" stroke-width="1.5" stroke-linecap="round" />
       <path d="M3 12H21" stroke="#223B80" stroke-width="1.5" stroke-linecap="round" />
       <path d="M3 17H21" stroke="#223B80" stroke-width="1.5" stroke-linecap="round" />
     </svg>
 
+  ),
+  filterIcon: (props: LucideProps) => (
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M32 144h448M112 256h288M208 368h96">
+      </path>
+    </svg>
   )
 }

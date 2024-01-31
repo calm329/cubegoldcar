@@ -22,8 +22,8 @@ type Props = {
 export default function InputForm({ input, select, label, inputClasses, labelClasses, placeholder, dateSelector }: Props) {
     const [date, setDate] = useState<Date | undefined>(new Date())
     return (
-        <label className='InputForm  w-[calc(50%-16px)] mb-6'>
-            <p className={`text-[#223B80] mb-4 text-base ${labelClasses}`}>{label}</p>
+        <label className='InputForm w-full lg:w-[calc(50%-16px)] mb-6'>
+            <p className={`text-[#223B80] mb-3 lg:mb-4 text-sm lg:text-base ${labelClasses}`}>{label}</p>
             {select ?
                 <Select>
                     <SelectTrigger className={` w-full py-4 px-8 border-none outline-none ${inputClasses} m-0  text-sm leading-6 h-14`}>

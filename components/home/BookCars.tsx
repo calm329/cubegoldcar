@@ -9,9 +9,9 @@ type Props = {}
 
 function BookCars({ }: Props) {
     return (
-        <div className='w-full lg:w-[calc(100%-130px)] my-0 mx-auto flex justify-between items-center flex-col'>
-            <div className='scheduleData py-6 px-6 lg:p-0 flex flex-col lg:flex-row justify-between items-center w-full lg:px-0 lg:px-[18px] mb-5'>
-                <ScheduleForm title={"Pick - Up"} classnames="w-full lg:w-[calc(50%-50px)] px-4 py-2 lg:px-12 lg:py-6 mb-8" />
+        <div className='w-full lg:w-[calc(100%-130px)] my-0 mx-auto flex justify-between items-center flex-col text-black'>
+            <div className='scheduleData py-6 px-6 lg:p-0 flex flex-col lg:flex-row justify-between items-center w-full g:px-[18px] mb-5'>
+                <ScheduleForm title={"Pick - Up"} classnames="w-full lg:w-[calc(50%-50px)] px-4 py-2 lg:px-12 lg:py-6 mb-8 lg:mb-0" />
                 <Button className='aspect-square bg-[#223B80] p-1 hidden lg:block'>
                     <Icons.changeIcon />
                 </Button>

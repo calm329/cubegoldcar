@@ -15,8 +15,8 @@ function CarCard({ className }: Props) {
         <div className={`CarCard font-PlusJakartaSans p-4 lg:p-6 bg-white  w-full rounded-xl ${className} cursor-pointer`} onClick={() => router.push('/car-details')}>
             <div className='nameFav flex justify-between'>
                 <div className='name'>
-                    <p className='font-PlusJakartaSans font-bold text-base lg:text-xl mb-1'>Koenigsegg</p>
-                    <p className='font-PlusJakartaSans font-bold text-sm text-[#90A3BF]'>Sport</p>
+                    <p className='font-PlusJakartaSans font-bold text-base lg:text-xl mb-1 text-black'>Koenigsegg</p>
+                    <p className='font-PlusJakartaSans font-bold text-sm text-[#90A3BF] '>Sport</p>
                 </div>
                 <div>
                     <Icons.blankHeart />

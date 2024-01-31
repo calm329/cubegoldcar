@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -6,11 +7,13 @@ import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { useRouter } from "next/navigation"
 
 export function SiteFooter() {
+  const router = useRouter()
   return (
     <footer
-      className="lg:h-[480px] p-6"
+      className="lg:h-[480px] p-6 text-black"
       style={{
         background: `url('/static/images/Footer.png')`,
         backgroundSize: "cover",
@@ -59,9 +62,9 @@ export function SiteFooter() {
         <div className="w-full lg:w-auto  lg:mb-0">
           <p className="text-white text-xs lg:text-base">©2022 CUBAGOLDCAR. All rights reserved</p>
         </div>
-        <div className="flex justify-between lg:block w-full lg:w-auto mb-8 lg:mb-0 ">
-          <a className="text-white text-xs mr-14">Privacy & Policy</a>
-          <a className="text-white text-xs">Terms & Condition</a>
+        <div className="flex justify-between lg:flex w-full lg:w-auto mb-8 lg:mb-0 ">
+          <div className="text-white cursor-pointer text-xs mr-14">Privacy & Policy</div>
+          <div className="text-white cursor-pointer text-xs" onClick={()=>router.push('/terms-and-conditions')}>Terms & Condition</div>
         </div>
       </div>
       {/* <hr className="bg-black border-black w-[calc(100% - 120px)] my-0 mx-auto mb-6"/> */}

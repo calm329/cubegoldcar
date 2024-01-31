@@ -12,13 +12,13 @@ type Props = {}
 function Billing({ }: Props) {
     const router = useRouter()
     return (
-        <div className='form max-w-[calc(100%-492px-34px)] w-full'>
+        <div className='form max-w-full lg:max-w-[calc(100%-492px-34px)] w-full'>
             <FormCard title={'Billing Info'} desc={'Please enter your billing info'} rightDec={'Step 1 of 4'}>
                 <div className='flex items-center justify-between flex-wrap w-full'>
-                    <InputForm label="Name" inputClasses='bg-[#F6F7F9] text-[#90A3BF] font-normal ' placeholder={'Your name'} />
-                    <InputForm label="Phone Number" inputClasses='bg-[#F6F7F9] text-[#90A3BF] font-normal ' placeholder={'Phone number'} />
-                    <InputForm label="Address" inputClasses='bg-[#F6F7F9] text-[#90A3BF] font-normal' placeholder={'Address'} />
-                    <InputForm label="Town / City" inputClasses='bg-[#F6F7F9] text-[#90A3BF] font-normal' placeholder={'Town or city'} />
+                    <InputForm label="Name" inputClasses='bg-[#F6F7F9] text-xs text-[#90A3BF] font-normal ' placeholder={'Your name'} />
+                    <InputForm label="Phone Number" inputClasses='bg-[#F6F7F9] text-xs text-[#90A3BF] font-normal ' placeholder={'Phone number'} />
+                    <InputForm label="Address" inputClasses='bg-[#F6F7F9] text-xs text-[#90A3BF] font-normal' placeholder={'Address'} />
+                    <InputForm label="Town / City" inputClasses='bg-[#F6F7F9] text-xs text-[#90A3BF] font-normal' placeholder={'Town or city'} />
                 </div>
             </FormCard>
             <FormCard title={'Rental Info'} desc={'Please select your rental date'} rightDec={'Step 2 of 4'}>
@@ -74,7 +74,7 @@ function Billing({ }: Props) {
                 <div className='pb-6'>
                     <div className='bankTransfer bg-[#F6F7F9] py-2  px-6 rounded-[10px] mt-4 flex justify-between items-center'>
                         <div className='flex items-center '>
-                            <Checkbox id="terms" className='rounded-full mr-5 h-6 w-6' />
+                            <Checkbox id="terms" className='rounded-full mr-5 h-6 w-6 text-black border-black' />
                             <p className='text-[#223B80] text-base'>Bank Transfer</p>
                         </div>
                         <Image alt='banktransferIcon' src='/static/images/bankTransferIcon.png' width={58} height={51} />
@@ -85,13 +85,13 @@ function Billing({ }: Props) {
                 {/* <div className='pb-6'> */}
                 <div className='bankTransfer bg-[#F6F7F9] py-4  px-6 rounded-[10px] mt-4 flex justify-between items-center'>
                     <div className='flex items-center '>
-                        <Checkbox id="terms" className='mr-5 h-6 w-6' />
+                        <Checkbox id="terms" className='mr-5 h-6 w-6 text-black border-black' />
                         <p className='text-[#223B80] text-base'>Additional driver</p>
                     </div>
                 </div>
                 <div className='bankTransfer bg-[#F6F7F9] py-4  px-6 rounded-[10px] mt-4 flex justify-between items-center'>
                     <div className='flex items-center '>
-                        <Checkbox id="terms" className='mr-5 h-6 w-6' />
+                        <Checkbox id="terms" className='mr-5 h-6 w-6 text-black border-black' />
                         <p className='text-[#223B80] text-base'>Vip assistance</p>
                     </div>
                 </div>
