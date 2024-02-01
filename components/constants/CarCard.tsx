@@ -19,10 +19,10 @@ function CarCard({ className }: Props) {
                     <p className='font-PlusJakartaSans font-bold text-sm text-[#90A3BF] '>Sport</p>
                 </div>
                 <div>
-                    <Icons.blankHeart />
+                    <Icons.blankHeart data-aos="fade-down-left" />
                 </div>
             </div>
-            <Image className='mt-8 lg:mt-16 w-full' alt='car' src={'/static/images/car.png'} width={200} height={100} />
+            <Image  data-aos="fade-right" className='mt-8 lg:mt-16 w-full' alt='car' src={'/static/images/car.png'} width={200} height={100} />
             <div className='flex flex-col pt-8 relative z-10 shadow-[0px_-19px_16px_white]'>
                 <div className='flex justify-between items-center'>
                     <p className="text-xs lg:text-sm font-PlusJakartaSans flex items-center font-normal text-[#90A3BF]"><span className='mr-1'><Icons.fuelPump /></span>90L</p>

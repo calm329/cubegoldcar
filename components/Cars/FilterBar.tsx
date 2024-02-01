@@ -10,7 +10,7 @@ type Props = {
 
 function FilterBar({ classname }: Props) {
     return (
-        <div className={`filterBar ${classname} w-full min-h-screen bg-white p-8`}>
+        <div className={`filterBar ${classname} w-full min-h-screen bg-white p-8`} data-aos="fade-up">
             <div className='sidebar'>
                 <p className='text-[#90A3BF] text-xs'>TYPE</p>
                 <div>

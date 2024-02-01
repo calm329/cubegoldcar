@@ -1,27 +1,46 @@
 "use client"
+
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
+import AOS from "aos"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { usePathname } from "next/navigation"
-import { useEffect, useState } from "react"
+
 import { Drawer, DrawerContent, DrawerTrigger } from "./ui/drawer"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select"
+import "aos/dist/aos.css"
+
 type Props = {
-  classNames?: string;
+  classNames?: string
 }
 const NavTools = ({ classNames }: Props) => {
   return (
-
     <>
       <DropdownMenu>
         <DropdownMenuTrigger>
-          <div className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames} text-black`}>
+          <div
+            className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames} text-black`}
+          >
             <svg
               width="24"
               height="24"
@@ -47,7 +66,9 @@ const NavTools = ({ classNames }: Props) => {
       </DropdownMenu>
       <DropdownMenu>
         <DropdownMenuTrigger>
-          <div className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames} text-black`}>
+          <div
+            className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames} text-black`}
+          >
             <svg
               width="24"
               height="24"
@@ -77,7 +98,9 @@ const NavTools = ({ classNames }: Props) => {
       </DropdownMenu>
       <DropdownMenu>
         <DropdownMenuTrigger>
-          <div className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames} text-black`}>
+          <div
+            className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames} text-black`}
+          >
             <svg
               width="24"
               height="24"
@@ -101,28 +124,36 @@ const NavTools = ({ classNames }: Props) => {
           <DropdownMenuItem>Subscription</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-
-
-
     </>
   )
-
 }
 export function SiteHeader() {
-  const pathname = usePathname();
+  const pathname = usePathname()
   const [navbarSticy, setNavbarSticky] = useState(false)
-  const [selectedLang, setSelectedLang] = useState('esp')
+  const [selectedLang, setSelectedLang] = useState("esp")
   useEffect(() => {
-    console.log(`Route changed to: ${pathname}`);
-    if (pathname != '/') {
+    AOS.init({
+      delay: 400,
+      duration: 800,
+    })
+  })
+  useEffect(() => {
+    console.log(`Route changed to: ${pathname}`)
+    if (pathname != "/") {
       setNavbarSticky(true)
     } else {
       setNavbarSticky(false)
     }
     // setChanges((prev) => prev + 1);
-  }, [pathname]);
+  }, [pathname])
   return (
-    <header className={` bg-white sticky top-0 shadow-md relative ${navbarSticy ? "bg-white sticky top-0 shadow-md relative" : 'lg:shadow-none lg:bg-transparent lg:absolute'}  p-[22px] py-0 h-[87px]  top-0 w-full z-20 `}>
+    <header
+      className={` bg-white sticky top-0 shadow-md relative ${
+        navbarSticy
+          ? "bg-white sticky top-0 shadow-md relative"
+          : "lg:shadow-none lg:bg-transparent lg:absolute"
+      }  p-[22px] py-0 h-[87px]  top-0 w-full z-20 `}
+    >
       <div className="nav flex justify-between relative items-center h-full">
         <div className="flex items-center h-full">
           <Image
@@ -133,10 +164,30 @@ export function SiteHeader() {
             className="h-full object-contain object-left lg:w-[190px] xl:w-auto"
           />
           <div className="ml-0 xl:ml-10 hidden lg:flex">
-            <Link href={'/'} className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks">Home</Link>
-            <Link href={'/Cars'} className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks">Cars</Link>
-            <Link href={'/about-us'} className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks">About Us</Link>
-            <Link href={'/how-it-works'} className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks">How It Works</Link>
+            <Link
+              href={"/"}
+              className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks"
+            >
+              Home
+            </Link>
+            <Link
+              href={"/Cars"}
+              className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks"
+            >
+              Cars
+            </Link>
+            <Link
+              href={"/about-us"}
+              className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks"
+            >
+              About Us
+            </Link>
+            <Link
+              href={"/how-it-works"}
+              className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks"
+            >
+              How It Works
+            </Link>
           </div>
         </div>
         {/* <div
@@ -154,16 +205,16 @@ export function SiteHeader() {
             <path
               d="M12.1646 21C17.6886 21 22.1667 16.7467 22.1667 11.5C22.1667 6.25329 17.6886 2 12.1646 2C6.64066 2 2.1626 6.25329 2.1626 11.5C2.1626 16.7467 6.64066 21 12.1646 21Z"
               stroke="#223B80"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M23.2195 22L21.1138 20"
               stroke="#223B80"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
           <input
@@ -180,72 +231,89 @@ export function SiteHeader() {
             <path
               d="M23.8378 6.5H17.5207"
               stroke="#223B80"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M6.99224 6.5H2.78086"
               stroke="#223B80"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M11.2036 10C13.2388 10 14.8886 8.433 14.8886 6.5C14.8886 4.567 13.2388 3 11.2036 3C9.16848 3 7.51867 4.567 7.51867 6.5C7.51867 8.433 9.16848 10 11.2036 10Z"
               stroke="#223B80"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M23.8378 17.5H19.6264"
               stroke="#223B80"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M9.09793 17.5H2.78086"
               stroke="#223B80"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M15.415 21C17.4502 21 19.1 19.433 19.1 17.5C19.1 15.567 17.4502 14 15.415 14C13.3799 14 11.73 15.567 11.73 17.5C11.73 19.433 13.3799 21 15.415 21Z"
               stroke="#223B80"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div> */}
         <div className="flex items-center ">
-          <Select onValueChange={(ev) => {
-            console.log(ev, 'evevev')
-            setSelectedLang(ev)
-          }}>
+          <Select
+            onValueChange={(ev) => {
+              console.log(ev, "evevev")
+              setSelectedLang(ev)
+            }}
+          >
             <SelectTrigger className="w-fit border-none outline-none active:outline-none focus-within:outline-none focus:outline-none focus-visible:outline-none bg-transparent">
               {/* <SelectValue placeholder="Theme" /> */}
 
               <div className="languageSelect flex items-center">
-                <Image alt="esp" src={`/static/images/${selectedLang}.png`} width={41} height={31} />
+                <Image
+                  alt="esp"
+                  src={`/static/images/${selectedLang}.png`}
+                  width={41}
+                  height={31}
+                />
                 {/* <Icons.espIcon /> */}
               </div>
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="esp">
-                <Image alt="esp" src={'/static/images/esp.png'} width={41} height={31} />
+                <Image
+                  alt="esp"
+                  src={"/static/images/esp.png"}
+                  width={41}
+                  height={31}
+                />
               </SelectItem>
               <SelectItem value="eng">
-                <Image alt="eng" src={'/static/images/eng.png'} width={41} height={31} />
+                <Image
+                  alt="eng"
+                  src={"/static/images/eng.png"}
+                  width={41}
+                  height={31}
+                />
               </SelectItem>
             </SelectContent>
           </Select>
@@ -265,22 +333,41 @@ export function SiteHeader() {
                     height={86}
                   />
                   <div className=" flex flex-col px-3 mt-4">
-                    <Link href={'/'} className="text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks">Home</Link>
-                    <Link href={'/Cars'} className="text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks">Cars</Link>
-                    <Link href={'/about-us'} className="text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks">About Us</Link>
-                    <Link href={'/how-it-works'} className="text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks">How It Works</Link>
+                    <Link
+                      href={"/"}
+                      className="text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks"
+                    >
+                      Home
+                    </Link>
+                    <Link
+                      href={"/Cars"}
+                      className="text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks"
+                    >
+                      Cars
+                    </Link>
+                    <Link
+                      href={"/about-us"}
+                      className="text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks"
+                    >
+                      About Us
+                    </Link>
+                    <Link
+                      href={"/how-it-works"}
+                      className="text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks"
+                    >
+                      How It Works
+                    </Link>
                   </div>
                 </div>
                 <div className="flex justify-evenly mt-4">
-                  <NavTools classNames={'flex ml-0'} />
-
+                  <NavTools classNames={"flex ml-0"} />
                 </div>
               </DrawerContent>
             </Drawer>
           </div>
-          <NavTools classNames={'hidden lg:flex'} />
+          <NavTools classNames={"hidden lg:flex"} />
         </div>
       </div>
-    </header >
+    </header>
   )
 }
