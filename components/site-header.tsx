@@ -111,6 +111,7 @@ const NavTools = ({ classNames }: Props) => {
 export function SiteHeader() {
   const pathname = usePathname();
   const [navbarSticy, setNavbarSticky] = useState(false)
+  const [selectedLang, setSelectedLang] = useState('esp')
   useEffect(() => {
     console.log(`Route changed to: ${pathname}`);
     if (pathname != '/') {
@@ -129,13 +130,13 @@ export function SiteHeader() {
             src={"/static/images/logo.png"}
             width={282}
             height={86}
-            className="h-full object-contain object-left"
+            className="h-full object-contain object-left lg:w-[190px] xl:w-auto"
           />
-          <div className=" ml-10 hidden lg:flex">
-            <Link href={'/'} className="text-xl font-bold text-[#223B80] mr-7 navLinks">Home</Link>
-            <Link href={'/Cars'} className="text-xl font-bold text-[#223B80] mr-7 navLinks">Cars</Link>
-            <Link href={'/about-us'} className="text-xl font-bold text-[#223B80] mr-7 navLinks">About Us</Link>
-            <Link href={'/how-it-works'} className="text-xl font-bold text-[#223B80] mr-7 navLinks">How It Works</Link>
+          <div className="ml-0 xl:ml-10 hidden lg:flex">
+            <Link href={'/'} className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks">Home</Link>
+            <Link href={'/Cars'} className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks">Cars</Link>
+            <Link href={'/about-us'} className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks">About Us</Link>
+            <Link href={'/how-it-works'} className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks">How It Works</Link>
           </div>
         </div>
         {/* <div
@@ -227,49 +228,25 @@ export function SiteHeader() {
           </svg>
         </div> */}
         <div className="flex items-center ">
-          <Select>
+          <Select onValueChange={(ev) => {
+            console.log(ev, 'evevev')
+            setSelectedLang(ev)
+          }}>
             <SelectTrigger className="w-fit border-none outline-none active:outline-none focus-within:outline-none focus:outline-none focus-visible:outline-none bg-transparent">
               {/* <SelectValue placeholder="Theme" /> */}
 
               <div className="languageSelect flex items-center">
-                <svg
-                  className="mr-[6px]"
-                  width="41"
-                  height="31"
-                  viewBox="0 0 41 31"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                >
-                  <rect width="41" height="31" fill="url(#pattern0)" />
-                  <defs>
-                    <pattern
-                      id="pattern0"
-                      patternContentUnits="objectBoundingBox"
-                      width="1"
-                      height="1"
-                    >
-                      <use
-                        xlinkHref="#image0_107_2207"
-                        transform="matrix(0.00504065 0 0 0.00666667 -0.00406504 0)"
-                      />
-                    </pattern>
-                    <image
-                      id="image0_107_2207"
-                      width="200"
-                      height="150"
-                      xlinkHref="data:image/png;base64,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"
-                    />
-                  </defs>
-                </svg>
-
-
+                <Image alt="esp" src={`/static/images/${selectedLang}.png`} width={41} height={31} />
+                {/* <Icons.espIcon /> */}
               </div>
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="light">Light</SelectItem>
-              <SelectItem value="dark">Dark</SelectItem>
-              <SelectItem value="system">System</SelectItem>
+              <SelectItem value="esp">
+                <Image alt="esp" src={'/static/images/esp.png'} width={41} height={31} />
+              </SelectItem>
+              <SelectItem value="eng">
+                <Image alt="eng" src={'/static/images/eng.png'} width={41} height={31} />
+              </SelectItem>
             </SelectContent>
           </Select>
           <div className="ml-3 flex items-center  lg:hidden">

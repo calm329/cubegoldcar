@@ -13,11 +13,12 @@ export function SiteFooter() {
   const router = useRouter()
   return (
     <footer
-      className="lg:h-[480px] p-6 text-black"
+      className="footer lg:h-[480px] p-6 pb-9 text-black"
       style={{
         background: `url('/static/images/Footer.png')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundSize: "contain",
+        backgroundPosition: "bottom center",
+        backgroundRepeat: "no-repeat"
       }}
     >
       <div className="pt-14 pb-[60px] flex justify-between mb-9 flex-wrap">
@@ -58,13 +59,13 @@ export function SiteFooter() {
           <p className="text-[#131313] opacity-60 font-semibold text-base mb-6">Facebooks</p>
         </div>
       </div>
-      <div className="w-full  lg:w-[calc(100%-120px)] border-black border-t-[1px] my-0 mx-auto flex justify-between items-center pt-6 flex-wrap lg:flex-row flex-col-reverse ">
+      <div className="w-full  lg:w-[calc(100%-120px)]  my-0 mx-auto flex justify-between items-center pt-6 flex-wrap lg:flex-row flex-col-reverse  ">
         <div className="w-full lg:w-auto  lg:mb-0">
           <p className="text-white text-xs lg:text-base">©2022 CUBAGOLDCAR. All rights reserved</p>
         </div>
         <div className="flex justify-between lg:flex w-full lg:w-auto mb-8 lg:mb-0 ">
           <div className="text-white cursor-pointer text-xs mr-14">Privacy & Policy</div>
-          <div className="text-white cursor-pointer text-xs" onClick={()=>router.push('/terms-and-conditions')}>Terms & Condition</div>
+          <div className="text-white cursor-pointer text-xs" onClick={() => router.push('/terms-and-conditions')}>Terms & Condition</div>
         </div>
       </div>
       {/* <hr className="bg-black border-black w-[calc(100% - 120px)] my-0 mx-auto mb-6"/> */}

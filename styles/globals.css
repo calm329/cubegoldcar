@@ -126,6 +126,11 @@
 .navLinks{
   font-family: Montserrat-Regular;
 }
+@media screen and (max-width: 1024px) {
+  .footer{
+    background-size: 1700px !important;    
+  }
+}
 @keyframes liveIcon {
   0% {
     padding: 0px;

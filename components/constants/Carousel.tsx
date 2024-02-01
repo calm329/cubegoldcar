@@ -23,8 +23,10 @@ function CarouselComponent({ }: Props) {
 
         setCount(api.scrollSnapList().length)
         setCurrent(api.selectedScrollSnap() + 1)
+        setActiveSlide(api.selectedScrollSnap() )
 
         api.on("select", () => {
+            setActiveSlide(api.selectedScrollSnap() )
             setCurrent(api.selectedScrollSnap() + 1)
         })
     }, [api])

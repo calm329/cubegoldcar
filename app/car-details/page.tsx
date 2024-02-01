@@ -32,10 +32,10 @@ function page({ }: Props) {
                         </Drawer>
                     </p>
                     <div className='carDetailBox flex w-full justify-between flex-wrap'>
-                        <div className='w-full lg:w-[calc(50%-16px)]'>
+                        <div className='w-full xl:w-[calc(50%-16px)]'>
                             <CarouselComponent /> 
                         </div>
-                        <div className='w-full lg:w-[calc(50%-16px)] bg-white rounded-[10px] mt-8 lg:mt-0'>
+                        <div className='w-full xl:w-[calc(50%-16px)] bg-white rounded-[10px] mt-8 lg:mt-0'>
                             <div className='details p-4 lg:p-6'>
                                 <div className='flex justify-between'>
                                     <div>
@@ -97,7 +97,7 @@ function page({ }: Props) {
                     </div>
                     <div className='flex w-full justify-between items-center flex-wrap mt-6'>
                         {[1, 2, 3, 4, 1, 2, 3, 4, 1].map((a, i) => (
-                            <CarCard className="lg:max-w-[calc((100%/3)-32px)] xl:max-w-[calc((100%/3)-32px)] mb-6" />
+                            <CarCard className="lg:max-w-[calc((100%/2)-32px)] xl:max-w-[calc((100%/3)-32px)] mb-6" />
                         ))}
                     </div>
                 </div>

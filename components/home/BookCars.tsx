@@ -7,7 +7,7 @@ import CarCard from '../constants/CarCard'
 
 type Props = {}
 
-function BookCars({ }: Props) {
+function  BookCars({ }: Props) {
     return (
         <div className='w-full lg:w-[calc(100%-130px)] my-0 mx-auto flex justify-between items-center flex-col text-black'>
             <div className='scheduleData py-6 px-6 lg:p-0 flex flex-col lg:flex-row justify-between items-center w-full g:px-[18px] mb-5'>
@@ -21,7 +21,7 @@ function BookCars({ }: Props) {
                 <p className='ml-6 mb-5 font-semibold flex justify-between items-center'>Popular Car <span className='lg:hidden text-[#223B80] text-xs'>View All</span></p>
                 <div className='flex w-full justify-between items-center flex-nowrap lg:flex-wrap overflow-auto lg:overflow-hidden'>
                     {[1, 2, 3, 4].map((a, i) => (
-                        <CarCard className="max-w-[calc(100%-111px)] min-w-[calc(100%-111px)] w-full ml-6 lg:ml-0 lg:min-w-[calc((100%/3)-32px)] lg:max-w-[calc((100%/3)-32px)] xl:min-w-[calc((100%/4)-32px)] xl:max-w-[calc((100%/4)-32px)]" />
+                        <CarCard className="max-w-[calc(100%-111px)] min-w-[calc(100%-111px)] w-full ml-6 lg:ml-0 lg:min-w-[calc((100%/2)-32px)] lg:max-w-[calc((100%/2)-32px)] xl:min-w-[calc((100%/4)-32px)] xl:max-w-[calc((100%/4)-32px)]" />
                     ))}
                 </div>
                 <div className='flex justify-center items-center mt-11'>
@@ -35,10 +35,9 @@ function BookCars({ }: Props) {
             </div>
             <div className='flex w-full justify-evenly items-center flex-nowrap lg:flex-wrap overflow-auto lg:overflow-hidden mt-12'>
                 {[1, 2, 3].map((a, i) => (
-                    <CarCard className="max-w-[calc(100%-24px)] min-w-[calc(100%-24px)] w-full ml-6 lg:ml-0 lg:min-w-[calc((100%/3)-32px)] lg:max-w-[calc((100%/3)-32px)] xl:min-w-[calc((100%/4)-32px)] xl:max-w-[calc((100%/4)-32px)]" />
+                    <CarCard className="max-w-[calc(100%-24px)] min-w-[calc(100%-24px)] w-full ml-6 lg:ml-0 lg:min-w-[calc((100%/2)-32px)] lg:max-w-[calc((100%/2)-32px)] xl:min-w-[calc((100%/4)-32px)] xl:max-w-[calc((100%/4)-32px)]" />
                 ))}
             </div>
-
         </div>
     )
 }
