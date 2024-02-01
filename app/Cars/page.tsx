@@ -31,7 +31,7 @@ function CarPage({ }: Props) {
                     </div>
                     <div className='flex w-full justify-between items-center flex-wrap mt-6'>
                         {[1, 2, 3, 4, 1, 2, 3, 4, 1].map((a, i) => (
-                            <CarCard className="sm:max-w-[calc((100%/2)-32px)] lg:max-w-[calc((100%/2)-32px)]  xl:max-w-[calc((100%/3)-32px)] 2xl:max-w-[calc((100%/4)-32px)] mb-6" />
+                            <CarCard key={i} className="sm:max-w-[calc((100%/2)-32px)] lg:max-w-[calc((100%/2)-32px)]  xl:max-w-[calc((100%/3)-32px)] 2xl:max-w-[calc((100%/4)-32px)] mb-6" />
                         ))}
                     </div>
                     <div className='flex justify-center'>

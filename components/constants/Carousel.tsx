@@ -42,7 +42,7 @@ function CarouselComponent({ }: Props) {
 
     return (
         <>
-            <Carousel setApi={setApi} className='w-full mb-[38px]'>
+            <Carousel  setApi={setApi} className='w-full mb-[38px]'>
                 <CarouselContent>
                     <CarouselItem className="w-full aspect-[1.37]  rounded-[10px] flex items-center justify-center">
                         <Image className='w-full aspect-[1.37]  object-contain' alt='car' src={'/static/images/car2.png'} width={200} height={100} />

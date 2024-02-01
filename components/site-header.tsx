@@ -154,16 +154,16 @@ export function SiteHeader() {
             <path
               d="M12.1646 21C17.6886 21 22.1667 16.7467 22.1667 11.5C22.1667 6.25329 17.6886 2 12.1646 2C6.64066 2 2.1626 6.25329 2.1626 11.5C2.1626 16.7467 6.64066 21 12.1646 21Z"
               stroke="#223B80"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M23.2195 22L21.1138 20"
               stroke="#223B80"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
           <input
@@ -180,50 +180,50 @@ export function SiteHeader() {
             <path
               d="M23.8378 6.5H17.5207"
               stroke="#223B80"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M6.99224 6.5H2.78086"
               stroke="#223B80"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M11.2036 10C13.2388 10 14.8886 8.433 14.8886 6.5C14.8886 4.567 13.2388 3 11.2036 3C9.16848 3 7.51867 4.567 7.51867 6.5C7.51867 8.433 9.16848 10 11.2036 10Z"
               stroke="#223B80"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M23.8378 17.5H19.6264"
               stroke="#223B80"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M9.09793 17.5H2.78086"
               stroke="#223B80"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M15.415 21C17.4502 21 19.1 19.433 19.1 17.5C19.1 15.567 17.4502 14 15.415 14C13.3799 14 11.73 15.567 11.73 17.5C11.73 19.433 13.3799 21 15.415 21Z"
               stroke="#223B80"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div> */}
@@ -242,10 +242,12 @@ export function SiteHeader() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="esp">
-                <Image alt="esp" src={'/static/images/esp.png'} width={41} height={31} />
+                <p className="flex text-base"><Image alt="esp" src={'/static/images/esp.png'} className="mr-2" width={31} height={21} />{" "}Es</p>
               </SelectItem>
               <SelectItem value="eng">
-                <Image alt="eng" src={'/static/images/eng.png'} width={41} height={31} />
+                <p className="flex text-base">
+                  <Image alt="eng" src={'/static/images/eng.png'}  className="mr-2" width={31} height={21} />{" "} En
+                </p>
               </SelectItem>
             </SelectContent>
           </Select>
@@ -261,14 +263,14 @@ export function SiteHeader() {
                   <Image
                     alt="logo"
                     src={"/static/images/logo.png"}
-                    width={282}
+                    width={180}
                     height={86}
                   />
                   <div className=" flex flex-col px-3 mt-4">
-                    <Link href={'/'} className="text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks">Home</Link>
-                    <Link href={'/Cars'} className="text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks">Cars</Link>
-                    <Link href={'/about-us'} className="text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks">About Us</Link>
-                    <Link href={'/how-it-works'} className="text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks">How It Works</Link>
+                    <Link href={'/'} className={`text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks flex p-2 mb-4 rounded-[4px] ${pathname === '/' ? 'bg-[#a9b5d8]' : ''}`}><span className="mr-2 "><Icons.homeIcon /></span> Home</Link>
+                    <Link href={'/Cars'} className={`text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks flex p-2 mb-4 rounded-[4px] ${pathname === '/Cars' ? 'bg-[#a9b5d8]' : ''}`}><span className="mr-2 "><Icons.carIcon /></span> Cars</Link>
+                    <Link href={'/about-us'} className={`text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks flex p-2 mb-4 rounded-[4px] ${pathname === '/about-us' ? 'bg-[#a9b5d8]' : ''}`}><span className="mr-2 "><Icons.aboutIcon /></span>About Us</Link>
+                    <Link href={'/how-it-works'} className={`text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks flex p-2 mb-4 rounded-[4px] ${pathname === '/how-it-works' ? 'bg-[#a9b5d8]' : ''}`}><span className="mr-2 "><Icons.docsIcon /></span> How It Works</Link>
                   </div>
                 </div>
                 <div className="flex justify-evenly mt-4">

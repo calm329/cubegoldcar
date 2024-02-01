@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button'
 import CarouselComponent from '@/components/constants/Carousel'
 import { useRouter } from 'next/navigation'
 import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer'
+import { Swiper, SwiperSlide } from "swiper/react";
 type Props = {}
 
 function page({ }: Props) {
@@ -33,7 +34,7 @@ function page({ }: Props) {
                     </p>
                     <div className='carDetailBox flex w-full justify-between flex-wrap'>
                         <div className='w-full xl:w-[calc(50%-16px)]'>
-                            <CarouselComponent /> 
+                            <CarouselComponent />
                         </div>
                         <div className='w-full xl:w-[calc(50%-16px)] bg-white rounded-[10px] mt-8 lg:mt-0'>
                             <div className='details p-4 lg:p-6'>
@@ -95,10 +96,23 @@ function page({ }: Props) {
                             </div>
                         </div>
                     </div>
-                    <div className='flex w-full justify-between items-center flex-wrap mt-6'>
+                    <div className='hidden lg:flex w-full justify-between items-center flex-wrap mt-6'>
                         {[1, 2, 3, 4, 1, 2, 3, 4, 1].map((a, i) => (
-                            <CarCard className="lg:max-w-[calc((100%/2)-32px)] xl:max-w-[calc((100%/3)-32px)] mb-6" />
+                            <CarCard key={i} className="lg:max-w-[calc((100%/2)-32px)] xl:max-w-[calc((100%/3)-32px)] mb-6" />
                         ))}
+                    </div>
+                    <div className='flex lg:hidden w-full justify-between items-center flex-wrap mt-6'>
+                        <Swiper className="mySwiper" slidesPerView={'auto'}
+                            spaceBetween={30}
+                            pagination={{
+                                clickable: true,
+                            }}>
+                            {[1, 2, 3, 4, 1, 2, 3, 4, 1].map((a, i) => (
+                                <SwiperSlide className="lg:max-w-[calc((100%/2)-32px)] xl:max-w-[calc((100%/3)-32px)] mb-6" >
+                                    <CarCard key={i} className="w-full" />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
                     </div>
                 </div>
             </div>

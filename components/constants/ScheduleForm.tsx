@@ -37,10 +37,10 @@ const ScheduleForm = (props: Props) => {
             </div>
             <div className='formInputs flex justify-between'>
                 <label className=''>
-                    <p className='font-PlusJakartaSans font-semibold text-base mt-4 text-black'>Locations</p>
+                    <p className='font-PlusJakartaSans font-semibold text-base mt-4 text-black px-3'>Location</p>
                     <Select>
                         <SelectTrigger className="border-none w-4/2 bg-transparent text-black">
-                            <SelectValue placeholder="Select your city" className='placeholder:text-[#90A3BF] text-xs font-medium text-black' />
+                            <SelectValue placeholder="Select your city"  className='placeholder:text-[#90A3BF]  text-xs font-medium text-black text-left  placeholder:text-left ' />
                         </SelectTrigger>
                         <SelectContent>
                             <SelectItem value="light">Light</SelectItem>
@@ -50,7 +50,7 @@ const ScheduleForm = (props: Props) => {
                     </Select>
                 </label>
                 <label className=''>
-                    <p className='font-PlusJakartaSans font-semibold text-base mt-4 text-black'>Date</p>
+                    <p className='font-PlusJakartaSans font-semibold text-base mt-4 text-black px-3'>Date</p>
                     <Popover>
                         <PopoverTrigger asChild className=''>
                             <Button
@@ -75,10 +75,10 @@ const ScheduleForm = (props: Props) => {
                     </Popover>
                 </label>
                 <label className=''>
-                    <p className='font-PlusJakartaSans font-semibold text-base mt-4 text-black'>Locations</p>
+                    <p className='font-PlusJakartaSans font-semibold text-base mt-4 text-black px-3'>Location</p>
                     <Select>
                         <SelectTrigger className="border-none w-4/2 bg-transparent text-black">
-                            <SelectValue placeholder="Select your city" className='placeholder:text-[#90A3BF] text-xs font-medium text-black' />
+                            <SelectValue placeholder="Select your city" className='placeholder:text-[#90A3BF] text-xs font-medium text-black text-left placeholder:text-left' />
                         </SelectTrigger>
                         <SelectContent>
                             <SelectItem value="light">Light</SelectItem>
