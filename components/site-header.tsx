@@ -148,11 +148,10 @@ export function SiteHeader() {
   }, [pathname])
   return (
     <header
-      className={` bg-white sticky top-0 shadow-md relative ${
-        navbarSticy
+      className={` bg-white sticky top-0 shadow-md relative ${navbarSticy
           ? "bg-white sticky top-0 shadow-md relative"
           : "lg:shadow-none lg:bg-transparent lg:absolute"
-      }  p-[22px] py-0 h-[87px]  top-0 w-full z-20 `}
+        }  p-[22px] py-0 h-[87px]  top-0 w-full z-20 `}
     >
       <div className="nav flex justify-between relative items-center h-full">
         <div className="flex items-center h-full">
@@ -166,25 +165,25 @@ export function SiteHeader() {
           <div className="ml-0 xl:ml-10 hidden lg:flex">
             <Link
               href={"/"}
-              className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks"
+              className={`text-xl font-bold ${pathname === "/" ? "text-[#F90000] underline-offset-8 underline" : "text-[#223B80]"} ml-4 xl:mr-7 navLinks`}
             >
               Home
             </Link>
             <Link
               href={"/Cars"}
-              className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks"
+              className={`text-xl font-bold ${pathname === "/Cars" ? "text-[#F90000] underline-offset-8 underline" : "text-[#223B80]"} ml-4 xl:mr-7 navLinks`}
             >
               Cars
             </Link>
             <Link
               href={"/about-us"}
-              className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks"
+              className={`text-xl font-bold ${pathname === "/about-us" ? "text-[#F90000] underline-offset-8 underline" : "text-[#223B80]"} ml-4 xl:mr-7 navLinks`}
             >
               About Us
             </Link>
             <Link
               href={"/how-it-works"}
-              className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks"
+              className={`text-xl font-bold ${pathname === "/how-it-works" ? "text-[#F90000] underline-offset-8 underline" : "text-[#223B80]"} ml-4 xl:mr-7 navLinks`}
             >
               How It Works
             </Link>
@@ -304,7 +303,7 @@ export function SiteHeader() {
               </SelectItem>
               <SelectItem value="eng">
                 <p className="flex text-base">
-                  <Image alt="eng" src={'/static/images/eng.png'}  className="mr-2" width={31} height={21} />{" "} En
+                  <Image alt="eng" src={'/static/images/eng.png'} className="mr-2" width={31} height={21} />{" "} En
                 </p>
               </SelectItem>
             </SelectContent>

@@ -12,7 +12,7 @@ type Props = {
 function CarCard({ className }: Props) {
     const router = useRouter()
     return (
-        <div className={`CarCard font-PlusJakartaSans p-4 lg:p-6 bg-white  w-full rounded-xl ${className} cursor-pointer`} onClick={() => router.push('/car-details')}>
+        <div className={`CarCard font-PlusJakartaSans p-4 mb-2 lg:p-6 bg-white  w-full rounded-xl ${className} cursor-pointer`} onClick={() => router.push('/car-details')}>
             <div className='nameFav flex justify-between'>
                 <div className='name'>
                     <p className='font-PlusJakartaSans font-bold text-base lg:text-xl mb-1 text-black'>Koenigsegg</p>

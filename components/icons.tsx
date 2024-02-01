@@ -29,7 +29,7 @@ export const Icons = {
     </svg>
   ),
   changeIcon: (props: LucideProps) => (
-    <svg width="41" height="39" viewBox="0 0 41 39" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg width="40" height="39" viewBox="0 0 40 39" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path d="M6.57653 27.0272L29.8154 26.9279" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M13.574 33.3426L6.57556 27.027L13.5591 20.6517" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M34.428 11.4584L11.1891 11.5577" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
