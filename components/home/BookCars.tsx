@@ -66,8 +66,9 @@ function BookCars({ }: Props) {
                     ))}
                 </Swiper>
             </div>
-        </div>
-    )
+
+    </div>
+  )
 }
 
 export default BookCars

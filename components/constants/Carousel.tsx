@@ -44,13 +44,13 @@ function CarouselComponent({ }: Props) {
         <>
             <Carousel  setApi={setApi} className='w-full mb-[38px]'>
                 <CarouselContent>
-                    <CarouselItem className="w-full aspect-[1.37]  rounded-[10px] flex items-center justify-center">
+                    <CarouselItem  data-aos="fade-right" className="w-full aspect-[1.37]  rounded-[10px] flex items-center justify-center">
                         <Image className='w-full aspect-[1.37]  object-contain' alt='car' src={'/static/images/car2.png'} width={200} height={100} />
                     </CarouselItem>
-                    <CarouselItem className="w-full aspect-[1.37]  rounded-[10px] ">
+                    <CarouselItem  data-aos="fade-right"className="w-full aspect-[1.37]  rounded-[10px] ">
                         <Image className='w-full h-full aspect-[1.37] ' alt='car' src={'/static/images/intView.png'} width={200} height={100} />
                     </CarouselItem>
-                    <CarouselItem className="w-full aspect-[1.37]  rounded-[10px] ">
+                    <CarouselItem  data-aos="fade-right"className="w-full aspect-[1.37]  rounded-[10px] ">
                         <Image className='w-full h-full aspect-[1.37] ' alt='car' src={'/static/images/intView2.png'} width={200} height={100} />
                     </CarouselItem>
                 </CarouselContent>

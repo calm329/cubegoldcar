@@ -1,27 +1,46 @@
 "use client"
+
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
+import AOS from "aos"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { usePathname } from "next/navigation"
-import { useEffect, useState } from "react"
+
 import { Drawer, DrawerContent, DrawerTrigger } from "./ui/drawer"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select"
+import "aos/dist/aos.css"
+
 type Props = {
-  classNames?: string;
+  classNames?: string
 }
 const NavTools = ({ classNames }: Props) => {
   return (
-
     <>
       <DropdownMenu>
         <DropdownMenuTrigger>
-          <div className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames} text-black`}>
+          <div
+            className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames} text-black`}
+          >
             <svg
               width="24"
               height="24"
@@ -47,7 +66,9 @@ const NavTools = ({ classNames }: Props) => {
       </DropdownMenu>
       <DropdownMenu>
         <DropdownMenuTrigger>
-          <div className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames} text-black`}>
+          <div
+            className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames} text-black`}
+          >
             <svg
               width="24"
               height="24"
@@ -77,7 +98,9 @@ const NavTools = ({ classNames }: Props) => {
       </DropdownMenu>
       <DropdownMenu>
         <DropdownMenuTrigger>
-          <div className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames} text-black`}>
+          <div
+            className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames} text-black`}
+          >
             <svg
               width="24"
               height="24"
@@ -101,28 +124,36 @@ const NavTools = ({ classNames }: Props) => {
           <DropdownMenuItem>Subscription</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-
-
-
     </>
   )
-
 }
 export function SiteHeader() {
-  const pathname = usePathname();
+  const pathname = usePathname()
   const [navbarSticy, setNavbarSticky] = useState(false)
-  const [selectedLang, setSelectedLang] = useState('esp')
+  const [selectedLang, setSelectedLang] = useState("esp")
   useEffect(() => {
-    console.log(`Route changed to: ${pathname}`);
-    if (pathname != '/') {
+    AOS.init({
+      delay: 400,
+      duration: 800,
+    })
+  })
+  useEffect(() => {
+    console.log(`Route changed to: ${pathname}`)
+    if (pathname != "/") {
       setNavbarSticky(true)
     } else {
       setNavbarSticky(false)
     }
     // setChanges((prev) => prev + 1);
-  }, [pathname]);
+  }, [pathname])
   return (
-    <header className={` bg-white sticky top-0 shadow-md relative ${navbarSticy ? "bg-white sticky top-0 shadow-md relative" : 'lg:shadow-none lg:bg-transparent lg:absolute'}  p-[22px] py-0 h-[87px]  top-0 w-full z-20 `}>
+    <header
+      className={` bg-white sticky top-0 shadow-md relative ${
+        navbarSticy
+          ? "bg-white sticky top-0 shadow-md relative"
+          : "lg:shadow-none lg:bg-transparent lg:absolute"
+      }  p-[22px] py-0 h-[87px]  top-0 w-full z-20 `}
+    >
       <div className="nav flex justify-between relative items-center h-full">
         <div className="flex items-center h-full">
           <Image
@@ -133,10 +164,30 @@ export function SiteHeader() {
             className="h-full object-contain object-left lg:w-[190px] xl:w-auto"
           />
           <div className="ml-0 xl:ml-10 hidden lg:flex">
-            <Link href={'/'} className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks">Home</Link>
-            <Link href={'/Cars'} className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks">Cars</Link>
-            <Link href={'/about-us'} className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks">About Us</Link>
-            <Link href={'/how-it-works'} className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks">How It Works</Link>
+            <Link
+              href={"/"}
+              className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks"
+            >
+              Home
+            </Link>
+            <Link
+              href={"/Cars"}
+              className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks"
+            >
+              Cars
+            </Link>
+            <Link
+              href={"/about-us"}
+              className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks"
+            >
+              About Us
+            </Link>
+            <Link
+              href={"/how-it-works"}
+              className="text-xl font-bold text-[#223B80] ml-4 xl:mr-7 navLinks"
+            >
+              How It Works
+            </Link>
           </div>
         </div>
         {/* <div
@@ -228,15 +279,22 @@ export function SiteHeader() {
           </svg>
         </div> */}
         <div className="flex items-center ">
-          <Select onValueChange={(ev) => {
-            console.log(ev, 'evevev')
-            setSelectedLang(ev)
-          }}>
+          <Select
+            onValueChange={(ev) => {
+              console.log(ev, "evevev")
+              setSelectedLang(ev)
+            }}
+          >
             <SelectTrigger className="w-fit border-none outline-none active:outline-none focus-within:outline-none focus:outline-none focus-visible:outline-none bg-transparent">
               {/* <SelectValue placeholder="Theme" /> */}
 
               <div className="languageSelect flex items-center">
-                <Image alt="esp" src={`/static/images/${selectedLang}.png`} width={41} height={31} />
+                <Image
+                  alt="esp"
+                  src={`/static/images/${selectedLang}.png`}
+                  width={41}
+                  height={31}
+                />
                 {/* <Icons.espIcon /> */}
               </div>
             </SelectTrigger>
@@ -274,15 +332,14 @@ export function SiteHeader() {
                   </div>
                 </div>
                 <div className="flex justify-evenly mt-4">
-                  <NavTools classNames={'flex ml-0'} />
-
+                  <NavTools classNames={"flex ml-0"} />
                 </div>
               </DrawerContent>
             </Drawer>
           </div>
-          <NavTools classNames={'hidden lg:flex'} />
+          <NavTools classNames={"hidden lg:flex"} />
         </div>
       </div>
-    </header >
+    </header>
   )
 }
