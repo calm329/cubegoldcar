@@ -12,6 +12,7 @@ coverage
 .next/
 out/
 build
+.gitDev
 
 # misc
 .DS_Store
