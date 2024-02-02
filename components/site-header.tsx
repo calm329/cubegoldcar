@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import AOS from "aos"
 
 import { siteConfig } from "@/config/site"
@@ -131,6 +131,7 @@ export function SiteHeader() {
   const pathname = usePathname()
   const [navbarSticy, setNavbarSticky] = useState(false)
   const [selectedLang, setSelectedLang] = useState("esp")
+  const router = useRouter()
   useEffect(() => {
     AOS.init({
       delay: 400,
@@ -161,6 +162,9 @@ export function SiteHeader() {
             width={282}
             height={86}
             className="h-full object-contain object-left lg:w-[190px] xl:w-auto"
+            onClick={()=>{
+              router.push('/')
+            }}
           />
           <div className="ml-0 xl:ml-10 hidden lg:flex">
             <Link
@@ -322,6 +326,9 @@ export function SiteHeader() {
                     src={"/static/images/logo.png"}
                     width={180}
                     height={86}
+                    onClick={()=>{
+                      router.push('/')
+                    }}
                   />
                   <div className=" flex flex-col px-3 mt-4">
                     <Link href={'/'} className={`text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks flex p-2 mb-4 rounded-[4px] ${pathname === '/' ? 'bg-[#a9b5d8]' : ''}`}><span className="mr-2 "><Icons.homeIcon /></span> Home</Link>

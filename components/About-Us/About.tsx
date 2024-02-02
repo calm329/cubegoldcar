@@ -31,8 +31,10 @@ function About({ }: Props) {
 
     setCount(api.scrollSnapList().length)
     setCurrent(api.selectedScrollSnap() + 1)
+    setActiveSlide(api.selectedScrollSnap() + 1)
 
     api.on("select", () => {
+      setActiveSlide(api.selectedScrollSnap() + 1)
       setCurrent(api.selectedScrollSnap() + 1)
     })
   }, [api])
@@ -53,8 +55,10 @@ function About({ }: Props) {
 
     setCountTestino(apiTestino.scrollSnapList().length)
     setCurrentTestino(apiTestino.selectedScrollSnap() + 1)
+    setActiveSlideTestino(apiTestino.selectedScrollSnap() + 1)
 
     apiTestino.on("select", () => {
+      setActiveSlideTestino(apiTestino.selectedScrollSnap() + 1)
       setCurrent(apiTestino.selectedScrollSnap() + 1)
     })
   }, [apiTestino])
@@ -266,7 +270,7 @@ function About({ }: Props) {
           </div>
 
           {/* carousel pointers */}
-          <div className="carouselPointers flex flex-row lg:flex-col justify-evenly lg:items-center w-full h-[8px] lg:w-[8px] lg:h-auto  mr-[40px] mt-6 lg:mt-0">
+          <div className="carouselPointers flex flex-row lg:flex-col justify-evenly lg:items-center w-full h-[8px] lg:w-[8px] lg:h-auto  lg:mr-[40px] mt-6 lg:mt-0 z-10">
             <div
               className={`h-[8px] w-[60px] lg:w-[8px] lg:h-[50px]   mb-[5px] cursor-pointer  rounded-full ${activeSlideTestino === 0 ? "bg-[#223B80]" : "bg-[#E8E8E8]"
                 }`}
@@ -306,7 +310,7 @@ function About({ }: Props) {
           </div>
 
           {/* testimonial  images */}
-          <div className="images-div flex flex-row bg-transparent w-[35%] h-[370px] hidden">
+          <div className="images-div  flex-row bg-transparent w-[35%] h-[370px] hidden lg:flex">
             <div className="w-full lg:w-[336px] relative ">
 
             <div className="image1 absolute top-[51px]" data-aos="fade-up">

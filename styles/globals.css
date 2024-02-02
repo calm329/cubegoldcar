@@ -8,8 +8,23 @@
 }
 
 @font-face {
+  font-family: 'Montserrat Alternates Medium';
+  src: url(/static/fonts/Montserrat_Alternates/MontserratAlternates-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Montserrat Alternates semibold';
+  src: url(/static/fonts/Montserrat_Alternates/MontserratAlternates-SemiBold.ttf);
+}
+
+@font-face {
   font-family: PlusJakartaSans;
   src: url(/static/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Bold.ttf);
+  /* font-weight: bold; */
+}
+@font-face {
+  font-family: 'PlusJakartaSans semibold';
+  src: url(/static/fonts/Plus_Jakarta_Sans/PlusJakartaSans-SemiBold.ttf);
   /* font-weight: bold; */
 }
 
@@ -18,11 +33,19 @@
   src: url(/static/fonts/Montserrat/Montserrat-Regular.ttf);
 }
 
-.font-PlusJakartaSans , * {
+.font-PlusJakartaSans,
+* {
   font-family: PlusJakartaSans, sans-serif;
   /* specify the correct font-family */
 }
+.font-PlusJakartaSans,
+.font-semibold{
+  font-family: 'PlusJakartaSans semibold', sans-serif;
 
+}
+.font-Montserrat-Regular{
+  font-family: Montserrat-Regular;
+}
 
 /* @font-face {
   font-family: 'PlusJakartaSans';
@@ -120,6 +143,18 @@
   font-family: 'Montserrat Alternates';
 }
 
+.driveHEading.font-medium,
+.offerHeading.font-medium,
+.driveHEading.text-medium,
+.offerHeading.text-medium {
+  font-family: 'Montserrat Alternates Medium';
+}
+
+.driveHEading.font-semibold,
+.offerHeading.font-semibold{
+  font-family: 'Montserrat Alternates semibolds';
+}
+
 .offersub-Heading {
   font-family: 'Montserrat';
 }
@@ -127,14 +162,17 @@
 .liveIcon {
   animation: liveIcon infinite 1s;
 }
-.navLinks{
+
+.navLinks {
   font-family: Montserrat-Regular;
 }
+
 @media screen and (max-width: 1024px) {
-  .footer{
-    background-size: 1700px !important;    
+  .footer {
+    background-size: 1700px !important;
   }
 }
+
 @keyframes liveIcon {
   0% {
     padding: 0px;
