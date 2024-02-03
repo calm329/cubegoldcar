@@ -35,8 +35,8 @@ const ScheduleForm = (props: Props) => {
                 </div>
                 <p className='font-PlusJakartaSans font-semibold text-base text-black'>{props.title}</p>
             </div>
-            <div className='formInputs flex justify-between'>
-                <label className=''>
+            <div className='formInputs flex justify-between flex-col sm:flex-row'>
+                <label className=' flex flex-row justify-between sm:flex-col'>
                     <p className='font-PlusJakartaSans font-semibold text-base mt-4 text-black px-3'>Location</p>
                     <Select>
                         <SelectTrigger className="border-none w-4/2 bg-transparent text-black">
@@ -49,7 +49,7 @@ const ScheduleForm = (props: Props) => {
                         </SelectContent>
                     </Select>
                 </label>
-                <label className=''>
+                <label className=' flex flex-row justify-between sm:flex-col'>
                     <p className='font-PlusJakartaSans font-semibold text-base mt-4 text-black px-3'>Date</p>
                     <Popover>
                         <PopoverTrigger asChild className=''>
@@ -74,8 +74,8 @@ const ScheduleForm = (props: Props) => {
                         </PopoverContent>
                     </Popover>
                 </label>
-                <label className=''>
-                    <p className='font-PlusJakartaSans font-semibold text-base mt-4 text-black px-3'>Location</p>
+                <label className=' flex flex-row justify-between sm:flex-col'>
+                    <p className='font-PlusJakartaSans font-semibold text-base mt-4 text-black px-3'>Time</p>
                     <Select>
                         <SelectTrigger className="border-none w-4/2 bg-transparent text-black">
                             <SelectValue placeholder="Select your city" className='placeholder:text-[#90A3BF] text-xs font-medium text-black text-left placeholder:text-left' />
