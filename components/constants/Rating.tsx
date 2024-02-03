@@ -1,21 +1,24 @@
-import React from 'react'
-import { Icons } from '../icons'
+import React from "react"
+
+import { Icons } from "../icons"
 
 type Props = {
-  classname?: any;
+  classname?: any
 }
 
 function Rating({ classname }: Props) {
   return (
-    <div className={`Rating flex items-center mt-[10px] ${classname}`}>
-      <div className='flex w-full mb-1 lg:mb-auto'>
-        <Icons.filldedStar className='mr-[2px]' />
-        <Icons.filldedStar className='mr-[2px]' />
-        <Icons.filldedStar className='mr-[2px]' />
-        <Icons.filldedStar className='mr-[2px]' />
-        <Icons.blankStar className='mr-[2px]' />
+    <div className={`Rating mt-[10px] flex items-center ${classname}`}>
+      <div className="mb-1 flex w-full lg:mb-auto">
+        <Icons.filldedStar className="mr-[2px]" />
+        <Icons.filldedStar className="mr-[2px]" />
+        <Icons.filldedStar className="mr-[2px]" />
+        <Icons.filldedStar className="mr-[2px]" />
+        <Icons.blankStar className="mr-[2px]" />
       </div>
-      <p className='ml-2 text-[12px] lg:text-[14px] text-[#223B80] w-full'>440+ Reviewer</p>
+      <p className="ml-2 w-full text-[12px] text-[#223B80] lg:text-[14px]">
+        440+ Reviewer
+      </p>
     </div>
   )
 }

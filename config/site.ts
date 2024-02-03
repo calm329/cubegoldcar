@@ -2,8 +2,7 @@ export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
   name: "CUBAGOLDCAR",
-  description:
-    "Drive the Experience: Your Journey, Your Car, Your Way!",
+  description: "Drive the Experience: Your Journey, Your Car, Your Way!",
   mainNav: [
     {
       title: "Home",

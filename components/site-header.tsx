@@ -39,7 +39,7 @@ const NavTools = ({ classNames }: Props) => {
       <DropdownMenu>
         <DropdownMenuTrigger>
           <div
-            className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames} text-black`}
+            className={`ml-5 aspect-square w-11 cursor-pointer rounded-full border-2 border-[#223B80] p-2 ${classNames} text-black`}
           >
             <svg
               width="24"
@@ -67,7 +67,7 @@ const NavTools = ({ classNames }: Props) => {
       <DropdownMenu>
         <DropdownMenuTrigger>
           <div
-            className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames} text-black`}
+            className={`ml-5 aspect-square w-11 cursor-pointer rounded-full border-2 border-[#223B80] p-2 ${classNames} text-black`}
           >
             <svg
               width="24"
@@ -99,7 +99,7 @@ const NavTools = ({ classNames }: Props) => {
       <DropdownMenu>
         <DropdownMenuTrigger>
           <div
-            className={`rounded-full cursor-pointer border-[#223B80] p-2 border-2 aspect-square w-11 ml-5 ${classNames} text-black`}
+            className={`ml-5 aspect-square w-11 cursor-pointer rounded-full border-2 border-[#223B80] p-2 ${classNames} text-black`}
           >
             <svg
               width="24"
@@ -149,45 +149,46 @@ export function SiteHeader() {
   }, [pathname])
   return (
     <header
-      className={` bg-white sticky top-0 shadow-md relative ${navbarSticy
-          ? "bg-white sticky top-0 shadow-md relative"
-          : "lg:shadow-none lg:bg-transparent lg:absolute"
-        }  p-[22px] py-0 h-[87px]  top-0 w-full z-20 `}
+      className={` relative sticky top-0 bg-white shadow-md ${
+        navbarSticy
+          ? "relative sticky top-0 bg-white shadow-md"
+          : "lg:absolute lg:bg-transparent lg:shadow-none"
+      }  top-0 z-20 h-[87px]  w-full p-[22px] py-0 `}
     >
-      <div className="nav flex justify-between relative items-center h-full">
-        <div className="flex items-center h-full">
+      <div className="nav relative flex h-full items-center justify-between">
+        <div className="flex h-full items-center">
           <Image
             alt="logo"
             src={"/static/images/logo.png"}
             width={282}
             height={86}
             className="h-full object-contain object-left lg:w-[190px] xl:w-auto"
-            onClick={()=>{
-              router.push('/')
+            onClick={() => {
+              router.push("/")
             }}
           />
-          <div className="ml-0 xl:ml-10 hidden lg:flex">
+          <div className="ml-0 hidden lg:flex xl:ml-10">
             <Link
               href={"/"}
-              className={`text-xl font-bold ${pathname === "/" ? "text-[#F90000] underline-offset-8 underline" : "text-[#223B80]"} ml-4 xl:mr-7 navLinks`}
+              className={`text-xl font-bold ${pathname === "/" ? "text-[#F90000] underline underline-offset-8" : "text-[#223B80]"} navLinks ml-4 xl:mr-7`}
             >
               Home
             </Link>
             <Link
               href={"/Cars"}
-              className={`text-xl font-bold ${pathname === "/Cars" ? "text-[#F90000] underline-offset-8 underline" : "text-[#223B80]"} ml-4 xl:mr-7 navLinks`}
+              className={`text-xl font-bold ${pathname === "/Cars" ? "text-[#F90000] underline underline-offset-8" : "text-[#223B80]"} navLinks ml-4 xl:mr-7`}
             >
               Cars
             </Link>
             <Link
               href={"/about-us"}
-              className={`text-xl font-bold ${pathname === "/about-us" ? "text-[#F90000] underline-offset-8 underline" : "text-[#223B80]"} ml-4 xl:mr-7 navLinks`}
+              className={`text-xl font-bold ${pathname === "/about-us" ? "text-[#F90000] underline underline-offset-8" : "text-[#223B80]"} navLinks ml-4 xl:mr-7`}
             >
               About Us
             </Link>
             <Link
               href={"/how-it-works"}
-              className={`text-xl font-bold ${pathname === "/how-it-works" ? "text-[#F90000] underline-offset-8 underline" : "text-[#223B80]"} ml-4 xl:mr-7 navLinks`}
+              className={`text-xl font-bold ${pathname === "/how-it-works" ? "text-[#F90000] underline underline-offset-8" : "text-[#223B80]"} navLinks ml-4 xl:mr-7`}
             >
               How It Works
             </Link>
@@ -288,7 +289,7 @@ export function SiteHeader() {
               setSelectedLang(ev)
             }}
           >
-            <SelectTrigger className="w-fit border-none outline-none active:outline-none focus-within:outline-none focus:outline-none focus-visible:outline-none bg-transparent">
+            <SelectTrigger className="w-fit border-none bg-transparent outline-none focus-within:outline-none focus:outline-none focus-visible:outline-none active:outline-none">
               {/* <SelectValue placeholder="Theme" /> */}
 
               <div className="languageSelect flex items-center">
@@ -303,11 +304,27 @@ export function SiteHeader() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="esp">
-                <p className="flex text-base"><Image alt="esp" src={'/static/images/esp.png'} className="mr-2" width={31} height={21} />{" "}Es</p>
+                <p className="flex text-base">
+                  <Image
+                    alt="esp"
+                    src={"/static/images/esp.png"}
+                    className="mr-2"
+                    width={31}
+                    height={21}
+                  />{" "}
+                  Es
+                </p>
               </SelectItem>
               <SelectItem value="eng">
                 <p className="flex text-base">
-                  <Image alt="eng" src={'/static/images/eng.png'} className="mr-2" width={31} height={21} />{" "} En
+                  <Image
+                    alt="eng"
+                    src={"/static/images/eng.png"}
+                    className="mr-2"
+                    width={31}
+                    height={21}
+                  />{" "}
+                  En
                 </p>
               </SelectItem>
             </SelectContent>
@@ -319,25 +336,57 @@ export function SiteHeader() {
                   <Icons.burgerMenu />
                 </button>
               </DrawerTrigger>
-              <DrawerContent className="flex flex-col justify-between pb-4 bg-white">
+              <DrawerContent className="flex flex-col justify-between bg-white pb-4">
                 <div>
                   <Image
                     alt="logo"
                     src={"/static/images/logo.png"}
                     width={180}
                     height={86}
-                    onClick={()=>{
-                      router.push('/')
+                    onClick={() => {
+                      router.push("/")
                     }}
                   />
-                  <div className=" flex flex-col px-3 mt-4">
-                    <Link href={'/'} className={`text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks flex p-2 mb-4 rounded-[4px] ${pathname === '/' ? 'bg-[#a9b5d8]' : ''}`}><span className="mr-2 "><Icons.homeIcon /></span> Home</Link>
-                    <Link href={'/Cars'} className={`text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks flex p-2 mb-4 rounded-[4px] ${pathname === '/Cars' ? 'bg-[#a9b5d8]' : ''}`}><span className="mr-2 "><Icons.carIcon /></span> Cars</Link>
-                    <Link href={'/about-us'} className={`text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks flex p-2 mb-4 rounded-[4px] ${pathname === '/about-us' ? 'bg-[#a9b5d8]' : ''}`}><span className="mr-2 "><Icons.aboutIcon /></span>About Us</Link>
-                    <Link href={'/how-it-works'} className={`text-xl font-bold text-[#223B80] mr-7 mb-2 navLinks flex p-2 mb-4 rounded-[4px] ${pathname === '/how-it-works' ? 'bg-[#a9b5d8]' : ''}`}><span className="mr-2 "><Icons.docsIcon /></span> How It Works</Link>
+                  <div className=" mt-4 flex flex-col px-3">
+                    <Link
+                      href={"/"}
+                      className={`navLinks mb-2 mb-4 mr-7 flex rounded-[4px] p-2 text-xl font-bold text-[#223B80] ${pathname === "/" ? "bg-[#a9b5d8]" : ""}`}
+                    >
+                      <span className="mr-2 ">
+                        <Icons.homeIcon />
+                      </span>{" "}
+                      Home
+                    </Link>
+                    <Link
+                      href={"/Cars"}
+                      className={`navLinks mb-2 mb-4 mr-7 flex rounded-[4px] p-2 text-xl font-bold text-[#223B80] ${pathname === "/Cars" ? "bg-[#a9b5d8]" : ""}`}
+                    >
+                      <span className="mr-2 ">
+                        <Icons.carIcon />
+                      </span>{" "}
+                      Cars
+                    </Link>
+                    <Link
+                      href={"/about-us"}
+                      className={`navLinks mb-2 mb-4 mr-7 flex rounded-[4px] p-2 text-xl font-bold text-[#223B80] ${pathname === "/about-us" ? "bg-[#a9b5d8]" : ""}`}
+                    >
+                      <span className="mr-2 ">
+                        <Icons.aboutIcon />
+                      </span>
+                      About Us
+                    </Link>
+                    <Link
+                      href={"/how-it-works"}
+                      className={`navLinks mb-2 mb-4 mr-7 flex rounded-[4px] p-2 text-xl font-bold text-[#223B80] ${pathname === "/how-it-works" ? "bg-[#a9b5d8]" : ""}`}
+                    >
+                      <span className="mr-2 ">
+                        <Icons.docsIcon />
+                      </span>{" "}
+                      How It Works
+                    </Link>
                   </div>
                 </div>
-                <div className="flex justify-evenly mt-4">
+                <div className="mt-4 flex justify-evenly">
                   <NavTools classNames={"flex ml-0"} />
                 </div>
               </DrawerContent>
